@@ -1,4 +1,4 @@
-# Clipboard text interfaces
+# Clipboard Text Utility Interfaces (Windows)
 
 This directory contains scripts that expose the features from the parent utility program in other environments.
 
@@ -8,10 +8,10 @@ You **must** configure the path to the utility program executable for the script
 
 ## Usage
 
-There is a usage example function on each file and thteir call expression are commented out at the very end of the file.
+There is a usage example function on each source file. The call expression of the example function is commented out at the end of the file.
 
 ## Environments
 
- - [clipboard-text.js](./clipboard-text.js) - Node.js - CommonJS - require / module.exports
- - [clipboard-text.mjs](./clipboard-text.mjs) - Node.js - ES Module -  import ... from
+ - [clipboard-text.js](./clipboard-text.js) - Node.js - CommonJS - (require / module.exports)
+ - [clipboard-text.mjs](./clipboard-text.mjs) - Node.js - ES Module - (import ... from)
  - [clipboard-text.py](./clipboard-text.py) - Python 3 - Asyncio
