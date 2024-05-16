@@ -7,12 +7,15 @@ Each folder here contains a utility project with a `readme.md` describing what t
 ## Utilities Created
 
 - [clipboard-text](./clipboard-text/readme.md) - Read and write clipboard text data on Windows.
-- [clipboard-set](./clipboard-set/readme.md) - Write format-specific data to clipboard storage on Windows.
+- [clipboard-data](./clipboard-data/readme.md) - Read, write, and list clipboard data of specific formats on Windows.
+- [window-state](./window-state/readme.md) - Interact with the properties of window elements.
 
 ## Motivation
 
-Low-level interfaces are old, configuration is error-prone, their interfaces are complex, so isolating their features in predictable parts and limiting their interfaces for simplicity will allow other projects to make use of them without having their inherent complexities, associated dependencies, and irrelevant details pollute these projects. The interface to OS-specific features often include compilation of native programs, library linking, dependencies, configurations, etc, so isolating these hard spots can turn these features into something that can be used by other projects.
+Configuration of low-level interfaces is error-prone, their interfaces are complex, and their features require lengthy experimentation to get right. Using a divide-and-conquer strategy and isolating their behaviors, requirements, and dependencies in minimal and predictable programs help us understand, operate, and re-use them in other projects. 
 
-Higher level languages offer native bindings features to interface with C/C++ programs, these depend on having the right version for everything. The language program, package manager, language-specific compiler, the operational system compiler, the cmake program, the meta-cmake, and the package version with the implemented native bindings. You can declare a good day when an install command with native bindings just works; It's never that simple.
+The interface to OS-specific features often include compilation of native programs, library linking, dependencies, configurations, etc, isolating these difficult processes in self-contained minimal programs make these features available to be operated from other projects without having their associated dependencies and irrelevant complexitities pollute these projects.
 
-The isolated utilities here are meant to provide self-contained interfaces with hidden side-effects. Their complexity is separated from the projects that will need them, and they provide a limited but simple interface to be useful.
+Native bindings offered by most high-level languages can interface with C/C++ programs, but these depend on having the right version for everything: From the program that interprets the language, to the installed compiler, cmake-related programs, and the right package version, which is not always up to date. It is indeed a good day when an install command that depends on native bindings just works: It's never that simple.
+
+The isolated utilities here are meant to provide self-contained interfaces that abstract away side-effects and separate its complexity from the projects that will need them.
