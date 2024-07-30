@@ -1,26 +1,33 @@
-# clipboard-data - Utility to access clipboard data (on Window)
+# clipboard-data - Utility to access clipboard data (Window only)
 
-A native program used to read data from the clipboard in any format for Windows.
+A native program to read and write data from the clipboard on Windows.
 
 ## Usage
 
 ```shell
-  clipboard-data <format>      Retrieves the clipboard data stored in the specified format.
-  clipboard-data --list        List each clipboard format that contains data to be read.
-  clipboard-data --json        Prints the list of formats in a parseable JSON format.
-  clipboard-data --help        Display usage instructions and arguments.
+
+    clipboard-data <mode> [options...]
   
-  Ex: clipboard-data 1    Retrieves the text format stored in the clipboard
+Modes:
+
+  --read / --get         Output the current plain text data of the clipboard.
+  --read <format>        Output the clipboard data stored in a specified format.
+  --write <text...>      Set the clipboard text from the imediate program arguments.
+  --file <file-path>     Set the clipboard text from the contents of a file.
+  --list                 List all the clipboard formats available in a json array string.
+  
+Example: Replace the clipboard with \"Hello word\"
+    clipboard-data --write Hello world
 ```
 
-Each option argument has an alias of its first character (`--list` can be reduced to `-l`, etc).
-
-Note:   When displaying the format list in text mode, the lack of available data will be indicated by a format of code 0.
-Note 2: If there is no data stored in the specified clipboard format the program will exit exit with a non-zero code.
+Each option argument has an alias of its first character (`--read` can be reduced to `-r`, `--list` to `-l`, etc).
 
 ## Interface
 
-The program can be used as a stand-alone process and the [interfaces](./interfaces/) folder contains scripts and usage examples in different environments.
+The program can be executed as a stand-alone process by other programs.
+
+The [interfaces](./interfaces/) folder contains scripts and usage examples in different environments.
+
 ## Compilation
 
 The compilation steps for this program are stored at the [./compile.bat](./compile.bat) batch script.

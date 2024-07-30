@@ -2,7 +2,8 @@
 SET ENVSCRIPT="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
 SET SETUP=call %ENVSCRIPT%
 SET COMPILE=cl.exe /nologo /Ob0 /O2 ./main.c /Fe"clipboard-data.exe" user32.lib
-SET EXECUTE=clipboard-data.exe --help
+SET EXECUTE1=clipboard-data.exe --help
+SET EXECUTE2=clipboard-data.exe --read
 %SETUP%
 IF %ERRORLEVEL% NEQ 0 (
 	echo Warning: Environment setup failed
@@ -22,14 +23,23 @@ IF %ERRORLEVEL% NEQ 0 (
   pause
   goto loop
 )
-%EXECUTE%
-echo.
+%EXECUTE1%
 IF %ERRORLEVEL% NEQ 0 (
-	echo Execute failed
+  echo.
+	echo Execute 1 failed
   echo.
   pause
   goto loop
 )
+%EXECUTE2%
+IF %ERRORLEVEL% NEQ 0 (
+  echo.
+	echo Execute 2 failed
+  echo.
+  pause
+  goto loop
+)
+echo.
 echo Execution finished
 echo.
 pause

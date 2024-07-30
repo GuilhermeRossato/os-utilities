@@ -15,7 +15,7 @@ int printHelp(int r)
       "\n"
       "Usage:\n"
       "\tclipboard-data --get <format>         Get the clipboard data of the specified format.\n"
-      "\tclipboard-data --set <format> <text>  Set the specified format of clipboard data from the imediate argument.\n"
+      "\tclipboard-data --set <format> <text>  Set the specified format of clipboard data to the string from the program argument.\n"
       "\tclipboard-data --list                 List the formats that contain clipboard data.\n"
       "\tclipboard-data --help                    Display help.\n");
   fwrite(buffer, size, 1, stdout);
