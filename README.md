@@ -6,13 +6,14 @@ Each folder here contains a utility project with a `readme.md` describing what t
 
 ## Utilities Created
 
+- [desktop-background](./desktop-background/readme.md) - Get or set the current display background image file.
 - [clipboard-text](./clipboard-text/readme.md) - Read and write clipboard text data on Windows.
 - [clipboard-data](./clipboard-data/readme.md) - Read, write, and list clipboard data of specific formats on Windows.
 - [window-state](./window-state/readme.md) - Interact with the properties of window elements.
 
 ## Motivation
 
-Configuration of low-level interfaces is error-prone, their interfaces are complex, and their features require lengthy experimentation to get right. Using a divide-and-conquer strategy and isolating their behaviors, requirements, and dependencies in minimal and predictable programs help us understand, operate, and re-use them in other projects. 
+Configuration of low-level interfaces is error-prone, their interfaces are complex, and their features require lengthy experimentation to get right. Using a divide-and-conquer strategy and isolating their behaviors, requirements, and dependencies in minimal and predictable programs help us understand, operate, and re-use them in other projects.
 
 The interface to OS-specific features often include compilation of native programs, library linking, dependencies, configurations, etc, isolating these difficult processes in self-contained minimal programs make these features available to be operated from other projects without having their associated dependencies and irrelevant complexitities pollute these projects.
 
